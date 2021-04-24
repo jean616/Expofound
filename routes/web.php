@@ -35,8 +35,5 @@ Route::post("ingresar_Documento",[DocumentoController::class,"guardarr"])->name(
 Route::get("/MostrarDocumento",[DocumentoController::class,"mostrar"]);
 
 /*Detalles de documentos*/
-Route::view("/ingresoDocumentos","IngresarDocumento");
-
-Route::post("ingresar_Detalles_Doc",[DetallesDeDocumentoController::class,"guardarr"])->name("Guardar_Documento");
 
 Route::get("/MostrarDetallesDoc",[DetallesDeDocumentoController::class,"mostrar"]);

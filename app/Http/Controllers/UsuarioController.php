@@ -19,7 +19,7 @@ class UsuarioController extends Controller
         return "Se Guardo con exito";
     }
      public  function mostrar(){
-        $resultados = Usuario::where("id",2)->get();
+        $resultados = Usuario::all();
         return  view("MostrarUsuarios",["resultados"=>$resultados]);
     }
 }

@@ -1,14 +1,14 @@
 <table border="1">
     <tr>
-        <th>fecha_subida</th>
-        <th>id_usuario</th>
-        <th>nombre_cliente</th>
+        <th>id</th>
+        <th>id_Documento</th>
+        <th>id_Usuario</th>
     </tr>
     @foreach($resultados as $docs)
         <tr>
+            <th>{{$docs["id"]}}</th>
             <th>{{$docs["id_Documento"]}}</th>
-            <th>{{$docs["id_documento"]}}</th>
-            <th>{{$docs["nombre_cliente"]}}</th>
+            <th>{{$docs["id_Usuario"]}}</th>
         </tr>
     @endforeach
 </table>

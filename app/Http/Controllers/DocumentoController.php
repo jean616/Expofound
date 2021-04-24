@@ -15,7 +15,7 @@ class DocumentoController extends Controller
         $doc ->save();
         return "Guardado";
     }
-    public function mostrar(Request $dataa){
+    public function mostrar(){
         $result = Documento::all ();
         return view("MostrarDocumento",["resultados"=>$result]);
     }
