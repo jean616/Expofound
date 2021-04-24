@@ -15,9 +15,8 @@ class CreateDocumentosTable extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
-            $table->dateTime("fecha_subida",$precision=0);
+            $table->dateTime("fecha_subida",6);
             $table->String("nombre_cliente",100);
-            $table->integer("id_usuario");
         });
         Schema::table('documentos', function (Blueprint $table) {
             $table->unsignedBigInteger("id_usuario");

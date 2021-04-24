@@ -19,8 +19,8 @@ class CreateUsuariosTable extends Migration
             $table->String("nombre_usuario",100);
             $table->String("Apellido_usuario",100);
             $table->String("Contraseña",100);
-            $table->int("telefono",9);
-            $table->int("dni",8);
+            $table->integer("telefono");
+            $table->integer("dni");
             $table->String("nombre_compañia",200);
         });
     }
