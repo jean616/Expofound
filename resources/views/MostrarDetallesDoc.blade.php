@@ -1,3 +1,5 @@
+@extends("layout")
+@section("contenido")
 <table border="1">
     <tr>
         <th>id</th>
@@ -12,3 +14,4 @@
         </tr>
     @endforeach
 </table>
+@endsection
