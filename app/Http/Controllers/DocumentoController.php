@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 class DocumentoController extends Controller
 {
     public function guardarr(Request $data){
-
+        $data->validate(
+            [
+                'id_usuario'=>'required | numeric ',
+                'nombre_cliente'=>'required |alpha '
+            ]
+        );
         $doc = new Documento();
         $doc ->fecha_subida = $data["fecha_subida"];
         $doc ->id_usuario = $data["id_usuario"];

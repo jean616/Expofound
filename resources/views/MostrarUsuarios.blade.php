@@ -3,14 +3,15 @@
 <table border="1">
     <tr>
         <th>Id</th>
-        <th>Tipo_de_usuario</th>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Contraseña</th>
-        <th>Telefono</th>
-        <th>dni</th>
-        <th>Compañia</th>
-        <th>&nbsp;</th>
+        <th> Tipo de usuario </th>
+        <th> Nombre </th>
+        <th> Apellido </th>
+        <th> Contraseña </th>
+        <th> Telefono </th>
+        <th> dni </th>
+        <th> Compañia </th>
+        <th> &nbsp </th>
+        <th> &nbsp </th>
     </tr>
 @foreach ($resultados as $usrio)
         <tr>

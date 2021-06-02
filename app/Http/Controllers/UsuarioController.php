@@ -8,14 +8,26 @@ class UsuarioController extends Controller
 {
     public  function  guardar(Request $dato){
 
+        $dato->validate(
+            [
+                'Tipo_usuario'=>'required ',
+                'Nombre'=>'required |alpha|min:3|max:30',
+                'Apellido'=>'required |alpha |min:3|max:30',
+                'Contraseña'=>'required ',
+                'Telefono'=>'required |min:9|numeric ',
+                'dni'=>'required |min:8|numeric',
+                'Compañia'=>'required '
+            ]
+        );
         $usario = new Usuario();
-        $usario ->Tipo_usuario = $dato["tipo_usuario"];
-        $usario ->nombre_usuario = $dato["Nombre"];
-        $usario ->Apellido_usuario = $dato["Apellido"];
-        $usario ->Contraseña = $dato["Contraseña"];
-        $usario ->telefono = $dato["Telefono"];
-        $usario ->dni = $dato["dni"];
-        $usario ->nombre_compañia = $dato["Compañia"];
+        $usario ->Tipo_usuario = $dato->Tipo_usuario;
+        $usario ->nombre_usuario = $dato->Nombre;
+        $usario ->Apellido_usuario = $dato->Apellido;
+        $usario ->Contraseña = $dato->Contraseña;
+        $usario ->telefono = $dato->Telefono;
+        $usario ->dni = $dato->dni;
+        $usario ->nombre_compañia = $dato->Compañia;
+
         $usario -> save();
         return redirect("ingresoUsuarios");
     }
@@ -49,6 +61,6 @@ class UsuarioController extends Controller
     Public function Eliminar(Request $request){
         $usuao=Usuario::findOrFail($request->id);
         $usuao->delete();
-        return redirect("MostrarUsuarios");
+        return redirect("/MostrarUsuarios");
     }
 }

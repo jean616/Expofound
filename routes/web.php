@@ -56,7 +56,17 @@ Route::post("/ActualizarDocumento",[DocumentoController::class,"actualizar"]);
 Route::get("/EliminarDocumento/{id}",  [DocumentoController::class,"MostrarUsuarioElimminar"],["id"=>"id"]);
 Route::post("/EliminarDocumento", [DocumentoController::class,"Eliminar"]);
 
+Route::view("/AdjuntarArchivo","subirArchivo");
+Route::post("/AdjuntarArchivo",function (Request $request){
+    return $request->file("archivo")->store("prueba");
+});
+
+
 
 /*Detalles de documentos*/
 
 Route::get("/MostrarDetallesDoc",[DetallesDeDocumentoController::class,"mostrar"]);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
