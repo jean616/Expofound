@@ -20,7 +20,7 @@ use App\Http\Controllers\UsuarioController;
 */
 
 
-Route::view('/','welcome');
+Route::view('/','auth.login');
 /*Usuarios*/
 Route::view("/ingresoUsuarios","IngresarUsuarios");
 
@@ -65,6 +65,10 @@ Route::post("/subir-archivos",function (Request $request){
 /*Detalles de documentos*/
 
 Route::get("/MostrarDetallesDoc",[DetallesDeDocumentoController::class,"mostrar"]);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
