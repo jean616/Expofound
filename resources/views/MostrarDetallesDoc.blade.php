@@ -4,7 +4,7 @@
     <tr>
         <th>id</th>
         <th>id_Documento</th>
-        <th>id_Usuario</th>
+        <th>id_Usuario</th>|
     </tr>
     @foreach($resultados as $docs)
         <tr>

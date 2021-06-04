@@ -18,17 +18,30 @@
 </head>
 
 <body class="bg-light" >
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="{{asset("img/sobre.png")}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            Expfound
+        </a>
+    </div>
+</nav>
 
+
+<header>
+    <h1 class="h3 text-center text-primary" >Control de Documentos</h1>
+
+</header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Expfound </a>
+        <a class="navbar-brand" href="#"> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/ingresoDocumentos" >Ingresar Documentos</a>
+                    <a href="/ingresoDocumentos" >Ingresar Documentos</a> |
                 </li>
                 <li class="nav-item">
                     <a href="/MostrarDocumento " >Mostrar Documentos</a>
@@ -37,11 +50,6 @@
         </div>
     </div>
 </nav>
-
-<header>
-    <h1>Control de Documentos</h1>
-
-</header>
 <section class="container">
     @yield("contenidoDocumen")
 </section>

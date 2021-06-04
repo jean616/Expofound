@@ -17,7 +17,7 @@
 
         </tr>
         <tr>
-            <td colspan="5"><input type="submit" name="submit" value="Guardar"></td>
+            <td colspan="5"><input class="btn-primary" type="submit" name="submit" value="Guardar"></td>
         </tr>
     </form>
     <a href="/AdjuntarArchivo">Subir Archivo</a>
