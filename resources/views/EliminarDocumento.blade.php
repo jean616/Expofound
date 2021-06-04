@@ -3,8 +3,8 @@
     <form method="post" action="/EliminarDocumento">
         @csrf
         <section>
-            <label>#Documento:</label>
-            <input type="number" name="id" value="{{$dtl["id"]}}"> <br>
+            <label>#Documento:  {{$dtl["id"]}} </label>
+            <input type="hidden" name="id" value="{{$dtl["id"]}}"> <br>
 
             <input type="submit" name="submit" value="eliminar">
 

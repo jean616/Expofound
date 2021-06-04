@@ -56,12 +56,11 @@ Route::post("/ActualizarDocumento",[DocumentoController::class,"actualizar"]);
 Route::get("/EliminarDocumento/{id}",  [DocumentoController::class,"MostrarUsuarioElimminar"],["id"=>"id"]);
 Route::post("/EliminarDocumento", [DocumentoController::class,"Eliminar"]);
 
-Route::view("/AdjuntarArchivo","subirArchivo");
-Route::post("/AdjuntarArchivo",function (Request $request){
+
+Route::view("/subir-archivos","subirArchivo");
+Route::post("/subir-archivos",function (Request $request){
     return $request->file("archivo")->store("prueba");
 });
-
-
 
 /*Detalles de documentos*/
 

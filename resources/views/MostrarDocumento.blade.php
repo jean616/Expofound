@@ -2,9 +2,9 @@
 @section("contenidoDocumen")
 <table border="1">
     <tr>
-        <th>id</th>
-        <th>fecha_subida</th>
-        <th>nombre_cliente</th>
+        <th>Id</th>
+        <th>Fecha subida</th>
+        <th>Nombre cliente</th>
     </tr>
         @foreach($resultados as $docs)
         <tr>

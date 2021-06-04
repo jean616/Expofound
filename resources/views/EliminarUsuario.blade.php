@@ -4,7 +4,7 @@
         @csrf
         <section>
             <label>Usuario {{$ddt["id"]}} </label><br>
-            <input type="number" name="id" value="{{$ddt["id"]}}"> <br>
+            <input type="hidden" name="id" value="{{$ddt["id"]}}"> <br>
 
             <input type="submit" name="submit" value="eliminar">
 

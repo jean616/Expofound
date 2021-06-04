@@ -28,9 +28,9 @@
             <th><input class="form-control" type="text" maxlength="8" name="Contraseña"  @if($errors->first('Contraseña')) style="border: 2px solid red" @endif></th>
                 <span style="color: coral">{{$errors->first('Contraseña')}}</span>
 
-            <th><input class="form-control" type="text" maxlength="9" name="Telefono" @if($errors->first('Telefono')) style="border: 2px solid red" @endif ></th>
+            <th><input class="form-control" type="text" maxlength="9"  name="Telefono" @if($errors->first('Telefono')) style="border: 2px solid red" @endif ></th>
                 <span style="color: coral">{{$errors->first('Telefono')}}</span>
-            <th><input class="form-control" type="text" maxlength="8" name="dni" @if($errors->first('dni')) style="border: 2px solid red" @endif ></th>
+            <th><input class="form-control" type="text" maxlength="8"  name="dni" @if($errors->first('dni')) style="border: 2px solid red" @endif ></th>
                 <span style="color: coral">{{$errors->first('dni')}}</span>
 
             <th><input class="form-control" type="text" maxlength="8" name="Compañia" @if($errors->first('Compañia')) style="border: 2px solid red" @endif ></th>

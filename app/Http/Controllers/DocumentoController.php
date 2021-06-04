@@ -31,6 +31,12 @@ class DocumentoController extends Controller
     }
 
     public function actualizar(Request $request){
+        $request->validate(
+            [
+                'id_usuario'=>'required | numeric ',
+                'nombre_cliente'=>'required |alpha '
+            ]
+        );
         $doccs=Documento::find($request->id);
         $doccs->fecha_subida = $request->fecha_subida;
         $doccs->id_usuario = $request->id_usuario;

@@ -10,12 +10,14 @@
             @csrf
             <tr>
                 <input type="hidden" name="id" value="{{$docss["id"]}}" >
-                <th><input type="datetime-local" maxlength="10" name="fecha_subida" value="{{$docss["fecha_subida"]}}" required></th>
-                <th><input type="number" name="id_usuario"  value="{{$docss["id_usuario"]}}" required></th>
-                <th><input type="text" name="nombre_cliente"  value="{{$docss["nombre_cliente"]}}" required></th>
+                <th><input class="form-control" type="datetime-local" name="fecha_subida" value="{{$docss["fecha_subida"]}}" required></th>
+                <th><input class="form-control" type="hidden" name="id_usuario"  value="{{$docss["id_usuario"]}}" >{{$docss["id"]}}</th>
+                <span style="color: coral">{{$errors->first('id_usuario')}}</span>
+                <th><input class="form-control" type="text" name="nombre_cliente"  value="{{$docss["nombre_cliente"]}}" ></th>
+                <span style="color: coral">{{$errors->first('nombre_cliente')}}</span>
             </tr>
             <tr>
-                <td colspan="7"><input type="submit" name="submit" value="Actualizar" ></td>
+                <td colspan="7"><input class="btn-primary"  type="submit" name="submit" value="Actualizar" ></td>
             </tr>
         </form>
     </table>

@@ -22,4 +22,5 @@
     </form>
     <a href="/AdjuntarArchivo">Subir Archivo</a>
 </table>
+</table>
 @endsection

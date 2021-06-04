@@ -40,6 +40,17 @@ class UsuarioController extends Controller
         return view("actualizarUsuarios",["dato"=>$resultados]);
     }
     public function actualizar(Request $request){
+        $request->validate(
+            [
+                'tipo_usuario'=>'required ',
+                'nombre_usuario'=>'required |alpha|min:3|max:30',
+                'Apellido_usuario'=>'required |alpha |min:3|max:30',
+                'Contraseña'=>'required ',
+                'telefono'=>'required  |numeric ',
+                'dni'=>'required  |numeric ',
+                'nombre_compañia'=>'required '
+            ]
+        );
             $usuar=Usuario::find($request->id);
             $usuar->tipo_usuario = $request->tipo_usuario;
             $usuar->nombre_usuario = $request->nombre_usuario;
