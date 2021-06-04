@@ -23,7 +23,7 @@
 
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/home">
             <img src="{{asset("img/sobre.png")}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
             Expfound
         </a>
@@ -35,23 +35,30 @@
 </header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"> </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">
+            <img src="{{asset("img/descarga.png")}}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/ingresoUsuarios/1" >Ingresar Usuarios    </a> |
+                    <a class="nav-link" href="/ingresoUsuarios" >Ingresar Usuarios    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/MostrarUsuarios " >  Mostrar Usuarios</a>
+                    <a class="nav-link" href="/MostrarUsuarios " >  Mostrar Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ingresoDocumentos" >Ingresar Documentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/MostrarDocumento " >Mostrar Documentos</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
 
 <section class="container">
     @yield("contenido")

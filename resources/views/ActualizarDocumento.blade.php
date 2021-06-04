@@ -1,5 +1,5 @@
-@extends("layoutDocumento")
-@section("contenidoDocumen")
+@extends("layout")
+@section("contenido")
     <table border="1">
         <tr>
             <th>fecha_subida</th>

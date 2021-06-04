@@ -14,7 +14,8 @@
         @csrf
         <tr>
             <input type="hidden" name="id" value="{{$dato["id"]}}">
-                <th><input type="text" name="tipo_usuario" value="{{$dato["tipo_usuario"]}}" @if($errors->first('tipo_usuario')) style="border: 2px solid red" @endif></th>
+
+                <th><input type="hidden" name="tipo_usuario" value="{{$dato["tipo_usuario"]}}" @if($errors->first('tipo_usuario')) style="border: 2px solid red" @endif>{{$dato["tipo_usuario"]}}</th>
             <span style="color: coral">{{$errors->first('tipo_usuario')}}</span>
                 <th><input type="text" name="nombre_usuario" value="{{$dato["nombre_usuario"]}}" @if($errors->first('nombre_usuario')) style="border: 2px solid red" @endif></th>
             <span style="color: coral">{{$errors->first('nombre_usuario')}}</span>

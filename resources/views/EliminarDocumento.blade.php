@@ -1,5 +1,5 @@
-@extends("layoutDocumento")
-@section("contenidoDocumen")
+@extends("layout")
+@section("contenido")
     <form method="post" action="/EliminarDocumento">
         @csrf
         <section>

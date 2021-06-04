@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetallesDeDocumentoController;
 use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\UsuarioController;
+use \Illuminate\Support\Facades;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +23,13 @@ use App\Http\Controllers\UsuarioController;
 
 Route::view('/','auth.login');
 /*Usuarios*/
-Route::view("/ingresoUsuarios","IngresarUsuarios");
+Route::get("/ingresoUsuarios",function (){
+    if(!Auth::check()){
+        return redirect()->route("login");
+    }else{
+        return view("IngresarUsuarios");
+    }
+});
 
 Route::get("/ingresoUsuarios/{idcolumna}",function (int $idcolumna){
             return view("IngresarUsuarios")->with("idcolumna",$idcolumna);

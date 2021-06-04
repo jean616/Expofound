@@ -1,8 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Storage;
 ?>
-@extends("layoutDocumento")
-@section("contenidoDocumen")
+@extends("layout")
+@section("contenido")
     <form method="post" action="/subir-archivos" enctype="multipart/form-data">
             @csrf
         <input type="file" name="archivo">

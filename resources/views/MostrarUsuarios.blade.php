@@ -1,6 +1,15 @@
+@php
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+@endphp
+@if(Auth::check())
+    @php
+        header("location:/");
+    @endphp
+@endif
 @extends("layout")
 @section("contenido")
-<table border="1">
+<table  class="table table-dark table-striped" >
     <tr>
         <th>Id</th>
         <th> Tipo de usuario </th>
@@ -10,8 +19,7 @@
         <th> Telefono </th>
         <th> dni </th>
         <th> Compañia </th>
-        <th> &nbsp </th>
-        <th> &nbsp </th>
+        <th class="text-right"> &nbsp </th>
     </tr>
 @foreach ($resultados as $usrio)
         <tr>
@@ -23,8 +31,9 @@
             <th>{{$usrio["telefono"]}}</th>
             <th>{{$usrio["dni"]}}</th>
             <th>{{$usrio["nombre_compañia"]}}</th>
-            <td><a href="/actualizar-Usuarios/{{$usrio["id"]}}">actualizar</a></td>
-            <td><a href="/EliminarUsuario/{{$usrio["id"]}}" >Eliminar</a></td>
+            <td class="td-actions text-right"><button class="btn btn-primary btn-sm " role="link" onclick="window.location='/actualizar-Usuarios/{{$usrio["id"]}}'" type="submit" >actualizar</button>
+                <button class="btn btn-danger btn-sm " role="link" onclick="window.location='/EliminarUsuario/{{$usrio["id"]}}'" type="submit"    >eliminar</button></td>
+
         </tr>
         @endforeach
 
