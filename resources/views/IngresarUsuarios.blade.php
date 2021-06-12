@@ -17,8 +17,9 @@
         <tr>
             <tbody>
             <th><select class="form-control" name="Tipo_usuario" >
-                <option value="Abogado">Abogado</option>
-                <option value="Colaborador">colaborador</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Abogado">Abogado</option>
+                    <option value="Colaborador">colaborador</option>
             </select> </th>
                 <span style="color: coral">{{$errors->first('Tipo_usuario')}}</span>
             <th><input class="form-control" type="text" maxlength="8" name="Nombre" @if($errors->first('Nombre')) style="border: 2px solid red" @endif></th>
