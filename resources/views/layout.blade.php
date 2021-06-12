@@ -29,10 +29,32 @@
         </a>
     </div>
 </nav>
+
+
+
+
+        <a align="right" id="navbarDropdown" class="nav-link dropdown-toggle sm:text-right " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a >
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" align="right">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        </div>
+
+
+
 <header>
     <h1 class="h3 text-center text-primary" >Control de expedientes</h1>
 
 </header>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">

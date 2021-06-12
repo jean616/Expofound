@@ -15,6 +15,7 @@ class CreateDocumentosTable extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
+            $table->String("Documento_nombre",100);
             $table->dateTime("fecha_subida",6);
             $table->String("nombre_cliente",100);
         });

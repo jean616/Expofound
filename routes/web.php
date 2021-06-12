@@ -4,11 +4,13 @@
 use App\Models\Detalles_de_documento;
 use App\Models\Documento;
 use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetallesDeDocumentoController;
 use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\UsuarioController;
 use \Illuminate\Support\Facades;
+use \App\Http\Controllers\usercontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,9 @@ use \Illuminate\Support\Facades;
 |
 */
 
-
-Route::view('/','auth.login');
+Route::view('/','welcome');
+/*
+Route::view('/','auth.login');*/
 /*Usuarios*/
 Route::get("/ingresoUsuarios",function (){
     if(!Auth::check()){
@@ -73,9 +76,6 @@ Route::post("/subir-archivos",function (Request $request){
 
 Route::get("/MostrarDetallesDoc",[DetallesDeDocumentoController::class,"mostrar"]);
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

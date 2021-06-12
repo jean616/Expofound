@@ -10,12 +10,15 @@ class DocumentoController extends Controller
     public function guardarr(Request $data){
         $data->validate(
             [
+                'Documento_nombre'=>'required |alpha ',
                 'id_usuario'=>'required | numeric ',
                 'nombre_cliente'=>'required |alpha '
+
             ]
         );
         $doc = new Documento();
         $doc ->fecha_subida = $data["fecha_subida"];
+        $doc ->Documento_nombre = $data["Documento_nombre"];
         $doc ->id_usuario = $data["id_usuario"];
         $doc ->nombre_cliente = $data["nombre_cliente"];
         $doc ->save();

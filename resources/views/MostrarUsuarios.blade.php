@@ -31,7 +31,8 @@ use Illuminate\Support\Facades\Auth;
             <th>{{$usrio["telefono"]}}</th>
             <th>{{$usrio["dni"]}}</th>
             <th>{{$usrio["nombre_compañia"]}}</th>
-            <td class="td-actions text-right"><button class="btn btn-primary btn-sm " role="link" onclick="window.location='/actualizar-Usuarios/{{$usrio["id"]}}'" type="submit" >actualizar</button>
+            <td class="td-actions text-right">
+                <button class="btn btn-primary btn-sm " role="link" onclick="window.location='/actualizar-Usuarios/{{$usrio["id"]}}'" type="submit" >actualizar</button>
                 <button class="btn btn-danger btn-sm " role="link" onclick="window.location='/EliminarUsuario/{{$usrio["id"]}}'" type="submit"    >eliminar</button></td>
 
         </tr>
