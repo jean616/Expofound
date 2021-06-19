@@ -76,6 +76,11 @@ Route::post("/subir-archivos",function (Request $request){
 
 Route::get("/MostrarDetallesDoc",[DetallesDeDocumentoController::class,"mostrar"]);
 
+/*Login-cliente*/
+/*Route::get( "/empleado-login","empleadologin");*/
+Route::view('dashhboard','dasboard');
+Route::view("/ModuloCliente","Modulo_Cliente_PRUEBA");
+
 
 Auth::routes();
 

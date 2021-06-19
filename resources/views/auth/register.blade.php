@@ -25,6 +25,21 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group row">
+                            <label for="Tipo_usuario" class="col-md-4 col-form-label text-md-right">{{ __('Tipo usuario') }}</label>
+                            <div class="col-md-6">
+                                <select class="form-control col-md-7 text-md-right " name="Tipo_usuario" >
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Abogado">Abogado</option>
+                                    <option value="Colaborador">colaborador</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
