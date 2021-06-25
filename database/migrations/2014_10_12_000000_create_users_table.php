@@ -16,12 +16,27 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('apellido');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('dni');
+            $table->integer('telefono');
+            $table->integer('type');
             $table->rememberToken();
             $table->timestamps();
         });
+        $password = Hash::make('secret');
+        DB::table("users")
+            ->insert([
+                "name" => "ADMINISTRADOR",
+                "apellido" => "admin",
+                "email" => "administrador@gmail.com",
+                "password" => "$password",
+                "dni" => "78653212",
+                "telefono" => 982747470,
+                "type" => 3,
+            ]);
     }
 
     /**
@@ -32,5 +47,8 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

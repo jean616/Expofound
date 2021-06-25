@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 
 use App\Models\Detalles_de_documento;
@@ -25,6 +26,17 @@ use \App\Http\Controllers\usercontroller;
 Route::view('/','welcome');
 /*
 Route::view('/','auth.login');*/
+/*User*/
+Route::get("/MostrarUsers",[usercontroller::class,"mostrarrr"]);
+
+
+Route::get("/Updatee_User/{id}",[usercontroller::class,"updd"]);
+Route::post("/Updatee_User",[usercontroller::class,"updateuseree"]);
+
+
+Route::get("/DeleteUsers/{id}",  [usercontroller::class,"ViewUserdele"],["id"=>"id"]);
+Route::post("/deltee", [usercontroller::class,"DeleteUsre"]);
+
 /*Usuarios*/
 Route::get("/ingresoUsuarios",function (){
     if(!Auth::check()){
@@ -40,15 +52,15 @@ Route::get("/ingresoUsuarios/{idcolumna}",function (int $idcolumna){
 
 Route::post("/ingresara_Usuarios",[UsuarioController::class,"guardar"])->name("Guardar_Usuarios");
 
+
+
 Route::get("/MostrarUsuarios",[UsuarioController::class,"mostrar"]);
 
 Route::get("/actualizar-Usuarios/{id}",[UsuarioController::class,"mostrarUsuario"]);
 Route::post("/actualizar-Usuarios",[UsuarioController::class,"actualizar"]);
 
-
 Route::get("/EliminarUsuario/{id}",  [UsuarioController::class,"MostrarUsuarioElimminar"],["id"=>"id"]);
 Route::post("/Eliminar_Usuario", [UsuarioController::class,"Eliminar"]);
-
 
 /*Documentos*/
 Route::view("/ingresoDocumentos","IngresarDocumento");
@@ -67,20 +79,18 @@ Route::get("/EliminarDocumento/{id}",  [DocumentoController::class,"MostrarUsuar
 Route::post("/EliminarDocumento", [DocumentoController::class,"Eliminar"]);
 
 
-Route::view("/subir-archivos","subirArchivo");
+Route::view("/subir-archivos","Archivo");
 Route::post("/subir-archivos",function (Request $request){
-    return $request->file("archivo")->store("prueba");
+    return $request->file("archivoss")->store("prueba");
 });
-
+/*Route::post("/subir-archivos",function (Request $request){
+    return $request->file("archivo")->store("prueba");
+});*/
 /*Detalles de documentos*/
 
 Route::get("/MostrarDetallesDoc",[DetallesDeDocumentoController::class,"mostrar"]);
 
 /*Login-cliente*/
-/*Route::get( "/empleado-login","empleadologin");*/
-Route::view('dashhboard','dasboard');
-Route::view("/ModuloCliente","Modulo_Cliente_PRUEBA");
-
 
 Auth::routes();
 

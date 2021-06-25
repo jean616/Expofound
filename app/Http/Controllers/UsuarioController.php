@@ -64,7 +64,6 @@ class UsuarioController extends Controller
     }
     public function MostrarUsuarioElimminar(int $id)
     {
-
          $resultados = Usuario::where("id", $id)->first();
          return view("EliminarUsuario", ["ddt" => $resultados]);
     }
@@ -73,5 +72,10 @@ class UsuarioController extends Controller
         $usuao=Usuario::findOrFail($request->id);
         $usuao->delete();
         return redirect("/MostrarUsuarios");
+    }
+    Public function Sesioness(Request $request){
+
+        Usuario::where("name",$request->nombre);
+        return "logrado";
     }
 }

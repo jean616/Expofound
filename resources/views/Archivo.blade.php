@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Storage;
 @section("contenido")
     <form method="post" action="/subir-archivos" enctype="multipart/form-data">
             @csrf
-        <input type="file" name="archivo">
+        <input type="file" name="archivoss">
         <input type="submit" name="submit" value="subir">
     </form>
-<a href="{{asset("storage/prueba.txt")}}">enlace</a>
-    <a href="{{asset("try/facil.pdf")}}">enlace</a>
+        <<a href="{{asset("storage/prueba.txt")}}">link</a>
+        <a href="{{asset("try/facil.pdf")}}">link</a>
 @endsection

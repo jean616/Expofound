@@ -18,10 +18,7 @@ class CreateDocumentosTable extends Migration
             $table->String("Documento_nombre",100);
             $table->dateTime("fecha_subida",6);
             $table->String("nombre_cliente",100);
-        });
-        Schema::table('documentos', function (Blueprint $table) {
-            $table->unsignedBigInteger("id_usuario");
-            $table->foreign("id_usuario")->references("id")->on("usuarios")->cascadeOnDelete();
+            $table->String("nameUser",100);
         });
     }
 

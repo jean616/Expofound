@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class DocumentoController extends Controller
 {
     public function guardarr(Request $data){
+
         $data->validate(
             [
                 'Documento_nombre'=>'required |alpha ',
-                'id_usuario'=>'required | numeric ',
                 'nombre_cliente'=>'required |alpha '
 
             ]
@@ -19,7 +19,7 @@ class DocumentoController extends Controller
         $doc = new Documento();
         $doc ->fecha_subida = $data["fecha_subida"];
         $doc ->Documento_nombre = $data["Documento_nombre"];
-        $doc ->id_usuario = $data["id_usuario"];
+        $doc ->nameUser = $data["nameUser"];
         $doc ->nombre_cliente = $data["nombre_cliente"];
         $doc ->save();
         return redirect("/ingresoDocumentos");
@@ -34,15 +34,15 @@ class DocumentoController extends Controller
     }
 
     public function actualizar(Request $request){
+
         $request->validate(
             [
-                'id_usuario'=>'required | numeric ',
                 'nombre_cliente'=>'required |alpha '
             ]
         );
         $doccs=Documento::find($request->id);
         $doccs->fecha_subida = $request->fecha_subida;
-        $doccs->id_usuario = $request->id_usuario;
+        $doccs->nameUser = $request->nameUser;
         $doccs->nombre_cliente = $request->nombre_cliente;
         $doccs->save();
         return redirect("MostrarDocumento");

@@ -1,4 +1,6 @@
-
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,8 +31,6 @@
         </a>
     </div>
 </nav>
-
-
 
 
         <a align="right" id="navbarDropdown" class="nav-link dropdown-toggle sm:text-right " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }}</a >
@@ -65,18 +65,47 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/ingresoUsuarios" >Ingresar Usuarios    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/MostrarUsuarios " >  Mostrar Usuarios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ingresoDocumentos" >Ingresar Documentos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/MostrarDocumento " >Mostrar Documentos</a>
-                </li>
+
+                @if( Auth::user()->type == 1  )
+                    <li class="nav-item">
+                        <a class="nav-link" href="/MostrarDocumento " >Mostrar Documentos</a>
+                    </li
+                @endif
+                    @php
+                        $verificationcontroller = new \App\Http\Controllers\Auth\VerificationController();
+                        $usuario= $verificationcontroller->getUserType();
+                    @endphp
+                @if(Auth::user()->type == 2 )
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MostrarDocumento " >Mostrar Documentos</a>
+                        </li
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ingresoDocumentos" >Ingresar Documentos</a>
+                    </li>
+                @endif
+                @php
+                    $verificationcontroller = new \App\Http\Controllers\Auth\VerificationController();
+                    $usuario= $verificationcontroller->getUserType();
+                @endphp
+                @if(Auth::user()->type ==3    )
+                    <li class="nav-item">
+                        <a class="nav-link" href="/MostrarDocumento " >Mostrar Documentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ingresoDocumentos" >Ingresar Documentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ingresoUsuarios" >Ingresar Usuarios    </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/MostrarUsuarios " >  Mostrar Usuarios</a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MostrarUsers " >  Usuarios</a>
+                        </li>
+                @endif
+
+
             </ul>
         </div>
     </div>
