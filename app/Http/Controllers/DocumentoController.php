@@ -2,25 +2,34 @@
 
 namespace App\Http\Controllers;
 
+
+use \Illuminate\Support\Facades;
+
 use App\Models\Documento;
 use Illuminate\Http\Request;
 
 class DocumentoController extends Controller
 {
-    public function guardarr(Request $data){
 
-        $data->validate(
+    public function guardarr(Request $request){
+
+        $Archivooo=$request->file("archivo")->getClientOriginalName("public");
+        $request->file("archivo")->storeAs("public", $Archivooo);
+
+        $request->validate(
             [
                 'Documento_nombre'=>'required |alpha ',
                 'nombre_cliente'=>'required |alpha '
 
             ]
         );
+
         $doc = new Documento();
-        $doc ->fecha_subida = $data["fecha_subida"];
-        $doc ->Documento_nombre = $data["Documento_nombre"];
-        $doc ->nameUser = $data["nameUser"];
-        $doc ->nombre_cliente = $data["nombre_cliente"];
+        $doc ->fecha_subida = $request["fecha_subida"];
+        $doc ->Documento_nombre = $request["Documento_nombre"];
+        $doc ->nameUser = $request["nameUser"];
+        $doc ->nombre_cliente = $request["nombre_cliente"];
+        $doc ->Arrchivo = $Archivooo;
         $doc ->save();
         return redirect("/ingresoDocumentos");
     }
@@ -34,7 +43,6 @@ class DocumentoController extends Controller
     }
 
     public function actualizar(Request $request){
-
         $request->validate(
             [
                 'nombre_cliente'=>'required |alpha '
@@ -59,5 +67,6 @@ class DocumentoController extends Controller
         $usuao->delete();
         return redirect("MostrarDocumento");
     }
+
 }
 

@@ -78,7 +78,7 @@
                 @if(Auth::user()->type == 2 )
                         <li class="nav-item">
                             <a class="nav-link" href="/MostrarDocumento " >Mostrar Documentos</a>
-                        </li
+                        </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/ingresoDocumentos" >Ingresar Documentos</a>
                     </li>
@@ -95,13 +95,10 @@
                         <a class="nav-link" href="/ingresoDocumentos" >Ingresar Documentos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/ingresoUsuarios" >Ingresar Usuarios    </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/MostrarUsuarios " >  Mostrar Usuarios</a>
+                         <a class="nav-link" href="/MostrarUsers " > Mostrar  Users</a>
                     </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/MostrarUsers " >  Usuarios</a>
+                            <a class="nav-link" href="/AddUsers " > Ingresar Users</a>
                         </li>
                 @endif
 

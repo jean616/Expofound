@@ -19,9 +19,7 @@ class CreateDetallesDeDocumentosTable extends Migration
         });
         Schema::table('detalles_de_documentos', function (Blueprint $table) {
             $table->unsignedBigInteger("id_Documento");
-            $table->unsignedBigInteger("id_Usuario");
             $table->foreign("id_documento")->references("id")->on("documentos")->cascadeOnDelete();
-            $table->foreign("id_usuario")->references("id")->on("usuarios")->cascadeOnDelete();
         });
     }
 

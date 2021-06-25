@@ -19,6 +19,7 @@ class CreateDocumentosTable extends Migration
             $table->dateTime("fecha_subida",6);
             $table->String("nombre_cliente",100);
             $table->String("nameUser",100);
+            $table->String("Arrchivo",100);
         });
     }
 

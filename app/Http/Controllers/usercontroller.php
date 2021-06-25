@@ -8,6 +8,36 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 class usercontroller extends Controller
 {
+    public  function  savee(Request $dato){
+
+        $contrar = Hash::make($dato->password);
+        $dato->validate(
+            [
+                'name'=>'required |alpha|min:3|max:30',
+                'apellido'=>'required |alpha |min:3|max:30',
+                'password'=>'required ',
+                'dni'=>'required |min:8|numeric',
+                'telefono'=>'required |min:9|numeric ',
+            ]
+        );
+        $usio = new User();
+        $usio ->name = $dato->name;
+        $usio ->apellido = $dato->apellido;
+        $usio ->email = $dato->email;
+        $usio ->password = $contrar;
+        $usio ->dni = $dato->dni;
+        $usio ->telefono = $dato->telefono;
+        $usio ->type = $dato->type;
+
+        $usio -> save();
+        return redirect("AddUsers");
+    }
+
+
+
+
+
+
     public  function mostrarrr(){
         if( Auth::user()->id == 1){
             $result = User::all();
